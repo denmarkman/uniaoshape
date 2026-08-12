@@ -30,6 +30,8 @@ public class AbaAssinatura extends JDialog {
 	    lbTitulo.setForeground(Color.WHITE);
 	    painel.add(lbTitulo);
 		
+	    
+	    
 
 		this.add(painel);
 	}

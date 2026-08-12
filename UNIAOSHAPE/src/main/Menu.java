@@ -23,9 +23,14 @@ import javax.swing.JTextField;
 
 public class Menu extends JFrame {
 
-	private ImageIcon iconeLogo;
-	private Image logoRedim;
-	private String localLogo = "images/logo_pequena.png";
+	private ImageIcon iconeLogoLogin;
+	private Image logoLoginRedim;
+	private String localLogoLogin = "images/logo_pequena.png";
+	
+	private ImageIcon iconeLogoHome;
+	private Image logoHomeRedim;
+	private String localLogoHome = "images/logo_opacidade.png";
+	
 	private static final long serialVersionUID = 1L;
 
 	public Menu() {
@@ -34,8 +39,8 @@ public class Menu extends JFrame {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setExtendedState(MAXIMIZED_BOTH);
-		this.getContentPane().setBackground(new Color(20, 20, 20));
-		this.setLayout(new FlowLayout(FlowLayout.CENTER, 7, 20));
+		this.getContentPane().setBackground(new Color(14, 14, 14));
+		this.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		
 		// barra de menu
         JMenu arq = new JMenu("Arquivo");
@@ -48,7 +53,13 @@ public class Menu extends JFrame {
         JMenuItem aluno = new JMenuItem("Aluno");
         JMenuItem funcionario = new JMenuItem("Funcionário");
         
+        JMenu pagamentos = new JMenu("Pagamentos");
+        
         JMenu catraca = new JMenu("Abrir Catraca");
+        
+        JMenu ajuda = new JMenu("Ajuda");
+        JMenuItem devs = new JMenuItem("Desenvolvedores");
+        
         JMenu logoff = new JMenu("Logoff");
         
         
@@ -58,26 +69,28 @@ public class Menu extends JFrame {
         arq.add(fechar);
         cadast.add(aluno);
         cadast.add(funcionario);
+        ajuda.add(devs);
         JMenuBar barraMenu = new JMenuBar();
         this.setJMenuBar(barraMenu);
         barraMenu.add(arq);
         barraMenu.add(cadast); 
         barraMenu.add(catraca); 
+        barraMenu.add(pagamentos);
+        barraMenu.add(ajuda);
         barraMenu.add(logoff);
         barraMenu.setVisible(false);
         
-        
 
 	    JPanel painel = new JPanel();
-		painel.setPreferredSize(new Dimension(560, 970));
+		painel.setPreferredSize(new Dimension(560, 1100));
 		painel.setBackground(new Color(20, 20, 20));
 		painel.setLayout(null);
 
-        iconeLogo = new ImageIcon(localLogo);
-        logoRedim = iconeLogo.getImage().getScaledInstance(500, 211, Image.SCALE_SMOOTH);
-        iconeLogo = new ImageIcon(logoRedim);
+        iconeLogoLogin = new ImageIcon(localLogoLogin);
+        logoLoginRedim = iconeLogoLogin.getImage().getScaledInstance(500, 211, Image.SCALE_SMOOTH);
+        iconeLogoLogin = new ImageIcon(logoLoginRedim);
         JLabel lbLogo = new JLabel();
-        lbLogo.setIcon(iconeLogo);
+        lbLogo.setIcon(iconeLogoLogin);
         lbLogo.setBounds(40, 30, 500, 211);
         painel.add(lbLogo);
 
@@ -116,14 +129,44 @@ public class Menu extends JFrame {
 		btnEntrar.setBounds(230, 360, 100, 30);
 		painel.add(btnEntrar);
 
-
+		
+		// depois de estar logado
 		JLabel lbTitulo = new JLabel();
 		lbTitulo.setFont(new Font("Century Gothic", Font.BOLD, 28));
 		lbTitulo.setForeground(Color.WHITE);
-		lbTitulo.setBounds(0, 0, 400, 30);
+		lbTitulo.setBounds(30, 30, 600, 35);
 		lbTitulo.setVisible(false);
 		this.add(lbTitulo);
 		
+		JLabel lbDescricao = new JLabel(
+				"Você é uma conta GERENTE, portanto tem acesso a todas as telas do sistema."
+				);
+		lbDescricao.setFont(new Font("Century Gothic", Font.ITALIC, 18));
+		lbDescricao.setForeground(Color.WHITE);
+		lbDescricao.setBounds(30, 70, 700, 30);
+		lbDescricao.setVisible(false);
+		this.add(lbDescricao);
+		
+
+        iconeLogoHome = new ImageIcon(localLogoHome);
+        logoHomeRedim = iconeLogoHome.getImage().getScaledInstance(500, 211, Image.SCALE_SMOOTH);
+        iconeLogoHome = new ImageIcon(logoHomeRedim);
+        JLabel lbLogoHome = new JLabel();
+        lbLogoHome.setIcon(iconeLogoHome);
+        lbLogoHome.setBounds(30, 750, 500, 211);
+        lbLogoHome.setVisible(false);
+        this.add(lbLogoHome);
+		
+		
+		
+		pagamentos.addMouseListener(new MouseAdapter() {
+			@Override 
+			public void mouseClicked(MouseEvent e) {
+				 AbaPagamentos aba = new AbaPagamentos();
+				 aba.setVisible(true);
+			}
+	         
+		});
 		
         catraca.addMouseListener(new MouseAdapter() {
             @Override
@@ -170,8 +213,15 @@ public class Menu extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				AbaFrmFuncionario aba = new AbaFrmFuncionario();
 				aba.setVisible(true);
+			}	
+		});
+		
+		devs.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				AbaDesenvolvedores aba = new AbaDesenvolvedores();
+				aba.setVisible(true);
 			}
-			
 		});
 		
 		fechar.addActionListener(new ActionListener() {
@@ -190,6 +240,11 @@ public class Menu extends JFrame {
             		barraMenu.setVisible(false);
             		painel.setVisible(true);
             		lbTitulo.setVisible(false);
+            		lbLogoHome.setVisible(false);
+            		lbDescricao.setVisible(false);
+            		
+            		getContentPane().setBackground(new Color(14, 14, 14));
+            		setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
             	}
             }
         });
@@ -201,6 +256,11 @@ public class Menu extends JFrame {
 				painel.setVisible(false);
 				lbTitulo.setText("Bem-vindo de volta, " + txUsuario.getText() + "!");
 				lbTitulo.setVisible(true);
+				lbLogoHome.setVisible(true);
+				lbDescricao.setVisible(true);
+				
+				getContentPane().setBackground(new Color(20, 20, 20));
+				setLayout(null);
 			}
         });
         
