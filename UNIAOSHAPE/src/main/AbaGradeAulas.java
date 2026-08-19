@@ -25,37 +25,37 @@ public class AbaGradeAulas extends JDialog {
 		painel.setBackground(new Color(20, 20, 20));
 		painel.setLayout(null);
 		
-	    JLabel lbSegunda = new JLabel("Segunda-feira: Leg day");
+	    JLabel lbSegunda = new JLabel("Segunda-feira: Musculação");
 		lbSegunda.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 	    lbSegunda.setBounds(180, 100, 300, 25);
 	    lbSegunda.setForeground(Color.WHITE);
 	    
 	    
-	    JLabel lbTerca   = new JLabel("Terça-feira: Musculo");
+	    JLabel lbTerca   = new JLabel("Terça-feira: Arte Marcial");
 	    lbTerca.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 	    lbTerca.setBounds(180, 120, 300, 25);
 	    lbTerca.setForeground(Color.WHITE);
 	    
 	    
-	    JLabel lbQuarta  = new JLabel("Quarta-feira: Supino");
+	    JLabel lbQuarta  = new JLabel("Quarta-feira: Musculação");
 	    lbQuarta.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 	    lbQuarta.setBounds(180, 140, 300, 25);
 	    lbQuarta.setForeground(Color.WHITE);
 	    
 	    
-	    JLabel lbQuinta  = new JLabel("Quinta-feira: Braço");
+	    JLabel lbQuinta  = new JLabel("Quinta-feira: Pilates");
 	    lbQuinta.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 	    lbQuinta.setBounds(180, 160, 300, 25);
 	    lbQuinta.setForeground(Color.WHITE);
 	    
 	    
-	    JLabel lbSexta   = new JLabel("Sexta-feira: Tendoes");
+	    JLabel lbSexta   = new JLabel("Sexta-feira: Yoga");
 	    lbSexta.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 	    lbSexta.setBounds(180, 180, 300, 25);
 	    lbSexta.setForeground(Color.WHITE);
 	    
 	    
-	    JLabel lbSabado  = new JLabel("Sábado: piscina");
+	    JLabel lbSabado  = new JLabel("Sábado: Musculação");
 	    lbSabado.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 	    lbSabado.setBounds(180, 200, 300, 25);
 	    lbSabado.setForeground(Color.WHITE);

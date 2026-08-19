@@ -32,6 +32,31 @@ public class AbaMatricula extends JDialog {
 	    
 	    
 	    
+	    JLabel lbtexto1 = new JLabel("codAluno   nomeAluno                           planoAluno");
+	    lbtexto1.setFont(new Font("Century Gothic", Font.PLAIN, 16));
+	    lbtexto1.setBounds(50, 70, 600, 25);
+	    lbtexto1.setForeground(Color.WHITE);
+	    painel.add(lbtexto1);
+	    
+	    JLabel lbtexto2 = new JLabel("ALUNO 1 -- PEDRO PONDIAN NETO -- Solo");
+	    lbtexto2.setFont(new Font("Century Gothic", Font.PLAIN, 16));
+	    lbtexto2.setBounds(50, 100, 600, 25);
+	    lbtexto2.setForeground(Color.WHITE);
+	    painel.add(lbtexto2);
+	    
+	    JLabel lbtexto3 = new JLabel("ALUNO 2 -- MIGUEL ORNAX                -- Familia");
+	    lbtexto3.setFont(new Font("Century Gothic", Font.PLAIN, 16));
+	    lbtexto3.setBounds(50, 120, 600, 25);
+	    lbtexto3.setForeground(Color.WHITE);
+	    painel.add(lbtexto3);
+	    
+	    JLabel lbtexto4 = new JLabel("ALUNO 3 -- DOUGLAS ORNAX            -- Familia");
+	    lbtexto4.setFont(new Font("Century Gothic", Font.PLAIN, 16));
+	    lbtexto4.setBounds(50, 140, 600, 25);
+	    lbtexto4.setForeground(Color.WHITE);
+	    painel.add(lbtexto4);
+	    
+	    
 		
 
 		this.add(painel);

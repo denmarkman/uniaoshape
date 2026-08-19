@@ -32,7 +32,7 @@ public class Menu extends JFrame {
 	private String localLogoHome = "images/logo_opacidade.png";
 	
 	private static final long serialVersionUID = 1L;
-
+	
 	public Menu() {
 		this.setSize(800, 600);
 		this.setTitle("Uniao Shape");
@@ -80,12 +80,12 @@ public class Menu extends JFrame {
         barraMenu.add(logoff);
         barraMenu.setVisible(false);
         
-
+        
 	    JPanel painel = new JPanel();
 		painel.setPreferredSize(new Dimension(560, 1100));
 		painel.setBackground(new Color(20, 20, 20));
 		painel.setLayout(null);
-
+		
         iconeLogoLogin = new ImageIcon(localLogoLogin);
         logoLoginRedim = iconeLogoLogin.getImage().getScaledInstance(500, 211, Image.SCALE_SMOOTH);
         iconeLogoLogin = new ImageIcon(logoLoginRedim);
@@ -94,6 +94,8 @@ public class Menu extends JFrame {
         lbLogo.setBounds(40, 30, 500, 211);
         painel.add(lbLogo);
 
+        
+        // aqui aqui!!!
 		JLabel lbTituloLogin = new JLabel("Login");
 		lbTituloLogin.setFont(new Font("Century Gothic", Font.BOLD, 24));
 		lbTituloLogin.setBounds(260, 240, 100, 30);
@@ -126,7 +128,7 @@ public class Menu extends JFrame {
 		btnEntrar.setBackground(new Color(210, 0, 58));
 		btnEntrar.setBorder(null);
 		btnEntrar.setForeground(Color.WHITE);
-		btnEntrar.setBounds(230, 360, 100, 30);
+		btnEntrar.setBounds(240, 360, 100, 30);
 		painel.add(btnEntrar);
 
 		
